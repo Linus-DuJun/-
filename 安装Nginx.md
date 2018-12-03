@@ -4,8 +4,27 @@
 ## 将用户设置成root
     usermod -aG wheel linus
 ## 安装nginx
-    sudo yum install epel-release
-    sudo yum install nginx
+    1. 通过epel安装
+        sudo yum install epel-release
+        sudo yum install nginx
+    2. 通过新建nginx yum源安装（推荐，因为能安装最新版， 更新也更容易）
+        ＊ 在/etc/yum.repos.d 目录下新建nginx.repo
+            sudo vi nginx.repo
+        * 在nginx.repo文件中写入如下内容
+            ```sh
+              [nginx]
+              name=nginx repo
+              baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
+              gpgcheck=0
+              enabled=1
+            ```
+            [详见]（https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/sec-using_yum_variables）
+        * 安装nginx
+           sudo yum install nginx
+        * 更新
+           sudo yum update nginx
+## 检查nginx版本
+    nginx -v
 ## 启动nginx
     sudo systemctl start nginx
 ## 设置开机自动启动nginx
@@ -48,4 +67,3 @@
     4. 重新加载nginx配置
       sudo nginx -s reload
 ## 配置SSL证书
-    
