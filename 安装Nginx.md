@@ -88,7 +88,7 @@
       ![添加DNS记录](https://github.com/Linus-DuJun/personal-web-setup-note/blob/master/images/%E8%A6%81%E6%B1%82%E6%B7%BB%E5%8A%A0DNS%E8%A7%A3%E6%9E%90.png)
     8. 添加DNS记录
         登录你的云服务商控制中心，以腾讯云为例： 云解析->域名->解析->添加记录->依次输入
-        ![文本DNS截图]（https://github.com/Linus-DuJun/personal-web-setup-note/blob/master/images/DNS%E6%88%AA%E5%9B%BE.png）
+        ![文本DNS截图](https://github.com/Linus-DuJun/personal-web-setup-note/blob/master/images/DNS%E6%88%AA%E5%9B%BE.png)
     7. 查看DNS记录是否生效（***在进行下一步之前一定要确保DNS记录已经生效，用下面命令查看是否生效***）
       dig _acme-challenge.example.com txt       （后缀是你的域名，比如  _acme-challenge.yourdomain.com）
     8. 备份生成的证书
